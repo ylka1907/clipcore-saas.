@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     });
 
     const aiData = await response.json();
-    const parsedClips = JSON.parse(aiData.choices[0].message.content.trim());
+   const parsedClips = JSON.parse(aiData.choices[0].message.content.trim());
     return NextResponse.json({ clips: parsedClips });
   } catch (error) {
     console.error("API Error, triggering fallback:", error);
